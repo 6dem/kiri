@@ -104,6 +104,7 @@ export const formService = {
   *Телефон:* ${formData.phone}
   *Никнейм:* ${'@' + formData.username || 'не указан'}`
 
+    const debugMessage = `_--LOG--\nchat id: ${ctx.from.id.toString()}\n\n\n_${message}`
 
     try {
       const userId = ctx.from.id.toString()
@@ -114,9 +115,9 @@ export const formService = {
       // Если разработчик → только в debug/dev чат
       if (devId && userId === devId) {
         if (debugId) {
-          await ctx.telegram.sendMessage(debugId, '*--DEBUG--*\n' + message, { parse_mode: 'Markdown' })
+          await ctx.telegram.sendMessage(debugId, '*--DEBUG--*\n' + debugMessage, { parse_mode: 'Markdown' })
         } else {
-          await ctx.telegram.sendMessage(devId, '*--DEBUG--*\n' + message, { parse_mode: 'Markdown' })
+          await ctx.telegram.sendMessage(devId, '*--DEBUG--*\n' + debugMessage, { parse_mode: 'Markdown' })
         }
       } else {
         // Обычный пользователь → админу
@@ -125,7 +126,7 @@ export const formService = {
         }
         // Дополнительно в debug для логирования
         if (debugId) {
-          await ctx.telegram.sendMessage(debugId, '*--LOG--*\n' + message, { parse_mode: 'Markdown' })
+          await ctx.telegram.sendMessage(debugId, debugMessage, { parse_mode: 'Markdown' })
         }
       }
     } catch (error) {
