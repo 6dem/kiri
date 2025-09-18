@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  &__logo {
+    font-weight: bold;
+    color: white;
+  }
+
+  &__nav a {
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+}
