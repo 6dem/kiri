@@ -1,0 +1,24 @@
+.burgerWrapper {
+    display: none;
+    align-items: center;
+}
+
+.burgerButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burgerWrapper {
+        display: flex;
+    }
+}

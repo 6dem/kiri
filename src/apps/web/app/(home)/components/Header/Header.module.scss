@@ -1,19 +1,64 @@
-@import "../../../styles/variables.scss";
-
+@import "@styles/variables.scss";
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: min(90vw, 1280px);
+    margin: 0 auto;
+    height: 120px;
+    padding-top: 10px;
+}
 
-  &__logo {
-    font-weight: bold;
-    color: white;
-  }
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #000;
+    position: relative;
+}
 
-  &__nav a {
-    margin-left: 1rem;
-    color: white;
+.item {
+    position: relative;
+    font-size: 20px;
+    padding: 1rem;
     text-decoration: none;
-  }
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50% -75%;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid transperent;
+        background: #000;
+        margin: 0 auto;
+        margin-top: 4px;
+        transition: background 0.3s, border 0.3s;
+    }
+
+    &.active::after {
+        background: #fff;
+        border: 1px solid #000;
+    }
+
+    &:hover {
+        color: #ffeace;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        border: none;
+    }
+    .item {
+        display: none;
+    }
 }
