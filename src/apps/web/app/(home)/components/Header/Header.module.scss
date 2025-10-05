@@ -6,7 +6,7 @@
     align-items: center;
     width: min(90vw, 1280px);
     margin: 0 auto;
-    height: 120px;
+    height: $header-height;
     padding-top: 10px;
 }
 
@@ -14,16 +14,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid $black-color;
     position: relative;
 }
 
 .item {
     position: relative;
     font-size: 20px;
-    padding: 1rem;
+    padding: 16px;
     text-decoration: none;
-    color: #000;
+    color: $black-color;
     font-weight: bold;
     transition: color 0.3s ease;
 
@@ -38,23 +38,35 @@
         height: 12px;
         border-radius: 50%;
         border: 1px solid transperent;
-        background: #000;
+        background: $black-color;
         margin: 0 auto;
         margin-top: 4px;
         transition: background 0.3s, border 0.3s;
     }
 
     &.active::after {
-        background: #fff;
-        border: 1px solid #000;
+        background: $white-color;
+        border: 1px solid $black-color;
     }
 
     &:hover {
-        color: #ffeace;
+        color: $accent-color;
+    }
+}
+
+@media (max-width: 950px) {
+    .item {
+        position: relative;
+        font-size: 16px;
+        padding: 10px;
     }
 }
 
 @media (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+    }
+
     .menu {
         border: none;
     }

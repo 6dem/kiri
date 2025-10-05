@@ -1,0 +1,35 @@
+@import "@styles/variables.scss";
+
+.TeacherListSection {
+}
+
+.twoCols {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    min-height: 400px;
+}
+
+.stickyHalf {
+    position: sticky;
+    top: 40px;
+    align-self: flex-start;
+    min-width: 50%;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $black-color;
+    padding: 24px 16px;
+    border-radius: 24px;
+    z-index: 2;
+}
+
+.title {
+}
+
+.cardsScroll {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-right: 8px;
+}

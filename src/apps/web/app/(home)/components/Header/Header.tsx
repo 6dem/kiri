@@ -1,20 +1,27 @@
 "use client"
 import { BurgerButton } from "@components/BurgerButton"
 import { Logo } from "@components/Logo"
+import { MobileMenu } from "@components/MobileMenu"
 import { useState } from "react"
 import styles from "./Header.module.scss"
 
 export function Header() {
   const [active, setActive] = useState("")
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const menuItems = [
-      { id: "hero", label: "О Го" },
-      { id: "offer", label: "Обучение" },
-      { id: "teachers", label: "Преподаватели" },
-      { id: "reviews", label: "Отзывы" },
-      { id: "contacts", label: "Контакты" },
-      { id: "faq", label: "FAQ" },
-    ];
+    { id: "about", label: "О Го" },
+    { id: "offer", label: "Обучение" },
+    { id: "teachers", label: "Преподаватели" },
+    { id: "reviews", label: "Отзывы" },
+    { id: "contacts", label: "Контакты" },
+    { id: "faq", label: "FAQ" },
+  ];
+
+  const handleMenuItemClick = (id: string) => {
+    setActive(id)
+    setMenuOpen(false)
+  }
 
   return (
     <header className={styles.header}>
@@ -32,8 +39,14 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <BurgerButton />
+        <BurgerButton isOpen={menuOpen} setIsOpen={setMenuOpen} />
       </nav>
+      <MobileMenu
+        open={menuOpen}
+        menuItems={menuItems}
+        active={active}
+        onMenuItemClick={handleMenuItemClick}
+      />
     </header>
   );
 }

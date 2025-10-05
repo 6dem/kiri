@@ -1,0 +1,33 @@
+.ReviewList {
+    position: relative;
+}
+
+.stickyTitle {
+    position: sticky;
+    z-index: 0;
+    top: 50vh;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    gap: 24px;
+    width: 100%;
+}
+
+.list > :nth-child(1) {
+    align-self: flex-start;
+}
+
+.list > :nth-child(2) {
+    align-self: center;
+}
+
+.list > :nth-child(3) {
+    align-self: flex-end;
+}

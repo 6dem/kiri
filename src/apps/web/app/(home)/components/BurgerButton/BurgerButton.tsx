@@ -3,14 +3,15 @@
 import burgerIcon from "@icons/burger.svg"
 import closeIcon from "@icons/close.svg"
 import Image from "next/image"
-import { useState } from "react"
 import styles from "./BurgerButton.module.scss"
 
+interface BurgerButtonProps {
+  isOpen: boolean
+  setIsOpen: (open: boolean) => void
+}
 
-export function BurgerButton() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen((prev) => !prev);
+export function BurgerButton({ isOpen, setIsOpen }: BurgerButtonProps) {
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div className={styles.burgerWrapper}>
