@@ -56,15 +56,22 @@
 }
 
 @media (max-width: 728px) {
+    .twoCols {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .stickyHalf {
         position: relative;
         height: fit-content;
         align-self: center;
+        gap: 20px;
         width: 100%;
+        padding: 0;
+        top: 0;
     }
 
-    .twoCols {
-        flex-direction: column;
-        align-items: center;
+    .title {
+        text-align: center;
     }
 }

@@ -31,3 +31,15 @@
 .list > :nth-child(3) {
     align-self: flex-end;
 }
+
+@media (max-width: 768px) {
+    .stickyTitle {
+        position: relative;
+        top: 0;
+        font-size: 40px;
+    }
+
+    .list > div {
+        align-self: center !important;
+    }
+}

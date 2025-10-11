@@ -24,9 +24,18 @@
 }
 
 .text {
+    flex: 2;
     font-size: 20px;
     color: $white-color;
     text-align: right;
-    flex: 2;
     margin-left: 32px;
+    width: calc(100% - 32px);
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+    .Review {
+        width: 100%;
+    }
 }
