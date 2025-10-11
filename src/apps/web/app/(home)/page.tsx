@@ -1,4 +1,4 @@
-// import { Contacts } from "@components/Contacts"
+import { Contacts } from "@components/Contacts"
 import { Header } from "@components/Header/Header"
 import { Hero } from "@components/Hero"
 import { InversionOverlay } from "@components/InversionOverlay"
@@ -15,8 +15,8 @@ export default function HomePage() {
         <InversionOverlay />
         <TeacherList />
         <ReviewList/>
-        {/* <Offer />
-        <Contacts /> */}
+        {/* <Offer /> */}
+        <Contacts />
       </main>
     </>
   );
