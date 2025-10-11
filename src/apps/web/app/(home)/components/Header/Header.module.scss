@@ -37,7 +37,7 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        border: 1px solid transperent;
+        border: 2px solid transperent;
         background: $black-color;
         margin: 0 auto;
         margin-top: 4px;
@@ -46,7 +46,7 @@
 
     &.active::after {
         background: $white-color;
-        border: 1px solid $black-color;
+        border-color: $black-color;
     }
 
     &:hover {
