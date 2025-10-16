@@ -1,8 +1,21 @@
+"use client"
+import { Form } from "@components/Form"
 import { contacts } from "@data/contacts"
 import Image from "next/image"
+import { useState } from "react"
 import styles from "./Contacts.module.scss"
 
 export function Contacts() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <section id="contacts" className={styles.contacts}>
       <div className="container">
@@ -29,13 +42,20 @@ export function Contacts() {
               ))}
               </ul>
           </div>
-          <div className={`${styles.card} ${styles.cardLesson}`}>
+          <div className={`${styles.card} ${styles.cardLesson}`} onClick={openModal}>
             <h3>Записаться на занятие</h3>
             <Image className={styles.clock} src="/icons/clock.svg" alt="icon" width={300} height={150}/>
-            <button className={styles.button}>Записаться</button>
+            <button className={styles.button} onClick={openModal} >Записаться</button>
           </div>
         </div>
       </div>
+      {isModalOpen && (
+        <div className={styles.modal} onClick={closeModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <Form onClose={closeModal}/>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
