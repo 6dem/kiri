@@ -12,10 +12,10 @@
 
 .cards {
     display: flex;
-    gap: 32px;
     justify-content: center;
     align-items: stretch;
     width: 100%;
+    gap: 32px;
     color: $white-color;
 
     h3 {
@@ -49,14 +49,35 @@
     }
 }
 
-.contact {
+.contactsList {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 20px;
+    width: 100%;
+}
+
+.contactIcon {
+    width: fit-content;
+    flex-shrink: 0;
 }
 
 .contactLink {
     color: $white-color;
     text-decoration: none;
     transition: color 0.3s;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:hover {
         text-decoration: underline;
@@ -84,7 +105,7 @@
 
 @media (max-width: 768px) {
     .cards {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 20px;
         align-items: stretch;
     }
