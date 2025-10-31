@@ -1,7 +1,6 @@
 @import "@styles/variables.scss";
 
 .contacts {
-    height: 100vh;
 }
 
 .title {
@@ -129,6 +128,9 @@
 }
 
 @media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+    }
     .cards {
         flex-direction: column-reverse;
         gap: 20px;

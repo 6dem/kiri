@@ -1,4 +1,5 @@
 import { Contacts } from "@components/Contacts"
+import { FAQ } from "@components/FAQ"
 import { Header } from "@components/Header/Header"
 import { Hero } from "@components/Hero"
 import { InversionOverlay } from "@components/InversionOverlay"
@@ -12,11 +13,12 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        {/* <Offer /> */}
         <InversionOverlay />
         <TeacherList />
         <ReviewList/>
-        {/* <Offer /> */}
         <Contacts />
+        <FAQ />
       </main>
     </>
   );
