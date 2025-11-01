@@ -1,3 +1,4 @@
+import { AboutGo } from "@components/AboutGo"
 import { Contacts } from "@components/Contacts"
 import { FAQ } from "@components/FAQ"
 import { Header } from "@components/Header/Header"
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <AboutGo />
         {/* <Offer /> */}
         <InversionOverlay />
         <TeacherList />
