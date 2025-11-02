@@ -2,6 +2,7 @@ import { AboutGo } from "@components/AboutGo"
 import { Contacts } from "@components/Contacts"
 import { EducationOffer } from "@components/EducationOffer"
 import { FAQ } from "@components/FAQ"
+import { Footer } from "@components/Footer"
 import { Header } from "@components/Header/Header"
 import { Hero } from "@components/Hero"
 import { InversionOverlay } from "@components/InversionOverlay"
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Contacts />
         <FAQ />
       </main>
+      <Footer />
     </>
   );
 }

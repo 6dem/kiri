@@ -15,7 +15,7 @@ export function Header() {
     { id: "teachers", label: "Преподаватели" },
     { id: "reviews", label: "Отзывы" },
     { id: "contacts", label: "Контакты" },
-    { id: "faq", label: "FAQ" },
+    { id: "faq", label: "ЧаВо" },
   ];
 
   const handleMenuItemClick = (id: string) => {
