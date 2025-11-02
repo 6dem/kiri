@@ -1,7 +1,7 @@
 @import "@styles/variables.scss";
 
 .Review {
-    background: $black-color;
+    background-color: rgba($black-color, 0.8);
     border-radius: 24px 4px 24px 4px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 24px 32px;

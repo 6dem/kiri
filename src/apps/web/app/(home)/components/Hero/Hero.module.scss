@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-between;
     height: calc(100dvh - $header-height);
+    scroll-margin-top: calc(20px + $header-height);
     max-height: 1440px;
 }
 
