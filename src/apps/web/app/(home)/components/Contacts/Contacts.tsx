@@ -1,4 +1,5 @@
 "use client"
+import { Button } from "@components/Button"
 import { Form } from "@components/Form"
 import { contacts } from "@data/contacts"
 import Image from "next/image"
@@ -45,7 +46,9 @@ export function Contacts() {
           <div className={`${styles.card} ${styles.cardLesson}`} onClick={openModal}>
             <h3>Записаться на занятие</h3>
             <Image className={styles.clock} src="/icons/clock.svg" alt="icon" width={300} height={150}/>
-            <button className={styles.button} onClick={openModal} >Записаться</button>
+            <Button onClick={openModal} className={styles.button}>
+              Записаться
+            </Button>
           </div>
         </div>
       </div>

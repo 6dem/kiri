@@ -11,7 +11,7 @@ export function Header() {
 
   const menuItems = [
     { id: "about", label: "О Го" },
-    { id: "offer", label: "Обучение" },
+    { id: "education", label: "Обучение" },
     { id: "teachers", label: "Преподаватели" },
     { id: "reviews", label: "Отзывы" },
     { id: "contacts", label: "Контакты" },
