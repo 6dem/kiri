@@ -1,4 +1,5 @@
 import { Teacher, TeacherProps } from "@components/Teacher/Teacher"
+import Image from "next/image"
 import styles from './TeacherList.module.scss'
 
 const teachers: TeacherProps[] = [
@@ -31,10 +32,15 @@ export function TeacherList() {
           <div className="container">
             <div className={styles.twoCols}>
               <div className={styles.stickyHalf}>
-                  <h2 className={styles.title}>
-                    Наши преподаватели
-                  </h2>
-                  <div className={styles.bubble}>Наши преподаватели — опытные мастера и настоящие энтузиасты, которые помогут вам полюбить Го и раскрыть свой потенциал в игре.</div>
+                <h2 className={styles.title}>
+                  Наши преподаватели
+                </h2>
+                <div className={styles.content}>
+                  <Image className={styles.paperLantern} src="/icons/paper-lantern.svg" alt="paper lantern icon" width={150} height={150} />
+                  <div className={styles.bubble}>
+                    Наши преподаватели — опытные мастера и настоящие энтузиасты, которые помогут вам полюбить Го и раскрыть свой потенциал в игре.
+                  </div>
+                </div>
               </div>
               <div className={styles.cardsScroll}>
                   {teachers.map((teacher, idx) => (

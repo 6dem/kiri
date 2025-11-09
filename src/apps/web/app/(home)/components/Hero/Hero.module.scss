@@ -1,4 +1,5 @@
 @import "@styles/variables.scss";
+@import "@styles/animations";
 
 .hero {
     display: flex;
@@ -34,40 +35,20 @@
     text-wrap: pretty;
 }
 
-@keyframes bowl-float {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(20%);
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .goBowl {
     position: absolute;
     animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
-    --horizontal-offset: 1vw;
-    --vertical-offset: 50px;
 }
 .goBowl1 {
-    top: var(--vertical-offset);
-    left: var(--horizontal-offset);
+    top: $vertical-offset;
+    left: $horizontal-offset;
     animation-duration: 2s;
     animation-delay: 0.2s;
     transform: translateY(0);
 }
 .goBowl2 {
-    bottom: calc(2 * var(--vertical-offset));
-    right: var(--horizontal-offset);
+    bottom: calc(2 * $vertical-offset);
+    right: $horizontal-offset;
 }
 
 /* From Uiverse.io by marcelodolza */
@@ -110,7 +91,7 @@
 
     .goBowl1 {
         top: 25px;
-        left: var(--horizontal-offset);
+        left: $horizontal-offset;
         animation-duration: 2s;
         animation-delay: 0.2s;
         transform: translateY(0);
@@ -118,7 +99,7 @@
 
     .goBowl2 {
         bottom: 25px;
-        right: var(--horizontal-offset);
+        right: $horizontal-offset;
     }
 
     .goBoard {

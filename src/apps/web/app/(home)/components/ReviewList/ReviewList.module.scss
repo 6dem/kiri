@@ -1,4 +1,5 @@
 @import "@styles/variables.scss";
+@import "@styles/animations";
 
 .ReviewList {
     background-color: $grey-color;
@@ -33,6 +34,20 @@
 
 .list > :nth-child(3) {
     align-self: flex-end;
+}
+
+.brush {
+    position: absolute;
+    top: calc(3 * $vertical-offset);
+    right: calc(3 * $horizontal-offset);
+    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
+}
+
+.origami {
+    position: absolute;
+    bottom: calc(3 * $vertical-offset);
+    left: calc(3 * $horizontal-offset);
+    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
 }
 
 @media (max-width: 768px) {

@@ -34,8 +34,29 @@
     font-weight: 700;
 }
 
+.content {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, 150);
+}
+
+.paperLantern {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: start;
+    align-self: end;
+}
+
 .bubble {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
     background-color: $accent-color;
+    color: $white-color;
     border-radius: 16px;
     padding: 16px;
     max-width: 300px;
@@ -73,5 +94,10 @@
 
     .title {
         text-align: center;
+    }
+
+    .paperLantern {
+        width: 100px;
+        height: 100px;
     }
 }
