@@ -1,0 +1,1 @@
+export { AboutGo } from "./AboutGo"

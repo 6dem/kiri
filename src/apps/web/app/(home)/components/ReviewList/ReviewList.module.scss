@@ -1,0 +1,63 @@
+@import "@styles/variables.scss";
+@import "@styles/animations";
+
+.ReviewList {
+    background-color: $grey-color;
+    position: relative;
+}
+
+.stickyTitle {
+    position: sticky;
+    z-index: 0;
+    top: 50vh;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    gap: 24px;
+    width: 100%;
+}
+
+.list > :nth-child(1) {
+    align-self: flex-start;
+}
+
+.list > :nth-child(2) {
+    align-self: center;
+}
+
+.list > :nth-child(3) {
+    align-self: flex-end;
+}
+
+.brush {
+    position: absolute;
+    top: calc(3 * $vertical-offset);
+    right: calc(3 * $horizontal-offset);
+    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
+}
+
+.origami {
+    position: absolute;
+    bottom: calc(3 * $vertical-offset);
+    left: calc(3 * $horizontal-offset);
+    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
+}
+
+@media (max-width: 768px) {
+    .stickyTitle {
+        position: relative;
+        top: 0;
+        font-size: 40px;
+    }
+
+    .list > div {
+        align-self: center !important;
+    }
+}

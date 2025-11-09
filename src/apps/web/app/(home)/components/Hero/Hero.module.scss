@@ -1,0 +1,108 @@
+@import "@styles/variables.scss";
+@import "@styles/animations";
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100dvh - $header-height);
+    scroll-margin-top: calc(20px + $header-height);
+    max-height: 1440px;
+}
+
+.title {
+    text-align: center;
+    font-size: 80px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
+    height: calc(100% - 96px);
+}
+
+.bubble {
+    background-color: $accent-color;
+    border-radius: 16px;
+    padding: 16px;
+    max-width: 250px;
+    text-wrap: pretty;
+}
+
+.goBowl {
+    position: absolute;
+    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
+}
+.goBowl1 {
+    top: $vertical-offset;
+    left: $horizontal-offset;
+    animation-duration: 2s;
+    animation-delay: 0.2s;
+    transform: translateY(0);
+}
+.goBowl2 {
+    bottom: calc(2 * $vertical-offset);
+    right: $horizontal-offset;
+}
+
+/* From Uiverse.io by marcelodolza */
+.divider {
+    width: 100%;
+    height: 10dvh;
+    --s: 100px; /* control the size */
+    --c1: #b6906c;
+    --c2: #000000;
+
+    --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%, var(--c1) 34% 44%, var(--c2) 44% 56%,
+        var(--c1) 56% 66%, var(--c2) 66% 76%, var(--c1) 76% 86%, var(--c2) 86% 96%;
+    background: radial-gradient(100% 100% at 100% 0, var(--c1) 4%, var(--_g), #0008 96%, #0000),
+        radial-gradient(100% 100% at 0 100%, #0000, #0008 4%, var(--_g), var(--c1) 96%) var(--c1);
+    background-size: var(--s) var(--s);
+}
+
+@media (max-width: 950px) {
+    .title {
+        font-size: 65px;
+    }
+
+    .goBowl {
+        width: 100px;
+    }
+
+    .goBoard {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 50px;
+    }
+
+    .goBowl {
+        width: max(50px, 15%);
+    }
+
+    .goBowl1 {
+        top: 25px;
+        left: $horizontal-offset;
+        animation-duration: 2s;
+        animation-delay: 0.2s;
+        transform: translateY(0);
+    }
+
+    .goBowl2 {
+        bottom: 25px;
+        right: $horizontal-offset;
+    }
+
+    .goBoard {
+        width: 200px;
+    }
+}

@@ -1,0 +1,29 @@
+@import "@styles/variables.scss";
+
+.burgerWrapper {
+    z-index: 1001;
+    display: none;
+    align-items: center;
+    background-color: $white-color;
+    border-radius: 16px;
+}
+
+.burgerButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burgerWrapper {
+        display: flex;
+    }
+}

@@ -1,0 +1,76 @@
+@import "@styles/variables.scss";
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: min(90vw, 1280px);
+    margin: 0 auto;
+    height: $header-height;
+    padding-top: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid $black-color;
+    position: relative;
+}
+
+.item {
+    position: relative;
+    font-size: 20px;
+    padding: 16px;
+    text-decoration: none;
+    color: $black-color;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50% -75%;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        background: $black-color;
+        margin: 0 auto;
+        margin-top: 4px;
+        transition: background 0.3s, border 0.3s;
+    }
+
+    &.active::after {
+        background: $white-color;
+        border-color: $black-color;
+    }
+
+    &:hover {
+        color: $accent-color;
+    }
+}
+
+@media (max-width: 950px) {
+    .item {
+        position: relative;
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    .menu {
+        border: none;
+    }
+    .item {
+        display: none;
+    }
+}

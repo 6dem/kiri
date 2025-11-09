@@ -1,0 +1,48 @@
+@import "@styles/variables";
+
+.title {
+    font-size: 45px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.image {
+    width: clamp(300px, 50vw, 550px);
+    border-radius: 16px;
+}
+
+.text {
+    width: clamp(300px, 50vw, 450px);
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.quote {
+    background-color: $accent-color;
+    color: $white-color;
+    font-weight: 600;
+    padding: 0 10px;
+    border-radius: 16px 0;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+    }
+
+    .text {
+        width: 100%;
+    }
+}

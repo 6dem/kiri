@@ -1,0 +1,41 @@
+@import "@styles/variables.scss";
+
+.Review {
+    background-color: rgba($black-color, 0.8);
+    border-radius: 24px 4px 24px 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 40px;
+    width: min(400px, 80vw);
+    min-height: 300px;
+    margin: 0 0 8px 0;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 24px;
+    color: $white-color;
+    text-align: left;
+    flex: 1;
+}
+
+.text {
+    flex: 2;
+    font-size: 20px;
+    color: $white-color;
+    text-align: right;
+    margin-left: 32px;
+    width: calc(100% - 32px);
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+    .Review {
+        width: 100%;
+    }
+}
