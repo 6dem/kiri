@@ -4,7 +4,7 @@ import styles from './EducationOffer.module.scss'
 export function EducationOffer() {
     return <section id="education" className={styles.EducationOffer}> 
       <div className="container">
-        <h2 className={styles.title}>Обучение в школе &quot;КИРИ&quot;</h2>
+        <h2 className={styles.title}>Обучение в школе Го &quot;КИРИ&quot;</h2>
         <p className={styles.subtitle}>
           Мы обучаем игре Го с нуля и помогаем совершенствовать мастерство.
         </p>

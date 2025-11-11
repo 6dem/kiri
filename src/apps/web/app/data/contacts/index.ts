@@ -6,5 +6,5 @@ export const contacts: IContacts = {
   number: { link: "tel:+79788702341", content: "+7 (978) 870-23-41", label: "Номер телефона", icon: Phone },
   tg: { link: "https://t.me/schoolgo_kiribot", content: "KiriBot", label: "Телеграм бот", icon: Send },
   vk: { link: "https://vk.com/school_go_kiri", content: 'Школа Го "КИРИ"', label: "Сообщество ВКонтакте", icon: Users },
-  address: { link: "https://yandex.ru/maps/geo/sevastopol/1443782471", content: "г. Севастополь, ул. ---, --", label: "Адрес", icon: MapPin }
+  address: { link: "https://yandex.ru/maps/959/sevastopol/house/ploshchad_vosstavshikh_4k6/Z0oYcwZkTk0AQFpufXpxcXlrYw==/?ll=33.514787%2C44.600587&z=16.9", content: "г. Севастополь, пл. Восставших 4к6", label: "Адрес", icon: MapPin }
 }
