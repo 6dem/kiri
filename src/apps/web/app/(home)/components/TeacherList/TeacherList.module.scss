@@ -76,7 +76,7 @@
     }
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
     .twoCols {
         flex-direction: column;
         align-items: center;
@@ -99,5 +99,9 @@
     .paperLantern {
         width: 100px;
         height: 100px;
+    }
+
+    .cardsScroll {
+        width: 100%;
     }
 }

@@ -8,8 +8,8 @@ export type TeacherProps = {
     avatarUrl: string
     name: string
     position: string
-    experienceYears: number
-    comment: string
+    experienceYears?: number
+    comment?: string
 }
 
 export function Teacher({
@@ -44,10 +44,17 @@ export function Teacher({
             <div className={styles.info}>
                 <h3 className={styles.name}>{name}</h3>
                 <p className={styles.position}>{position}</p>
-                <p className={styles.experience}>
-                    Опыт: {experienceYears} {experienceYears === 1 ? 'год' : experienceYears < 5 ? 'года' : 'лет'}
-                </p>
-                <blockquote className={styles.comment}>{comment}</blockquote>
+                {experienceYears && (
+                    <p className={styles.experience}>
+                        Опыт: {experienceYears}{" "}
+                        {experienceYears === 1
+                        ? "год"
+                        : experienceYears < 5
+                        ? "года"
+                        : "лет"}
+                    </p>
+                    )}
+                {comment && <blockquote className={styles.comment}>{comment}</blockquote>}
             </div>
         </div>
     )

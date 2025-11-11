@@ -5,24 +5,18 @@ import styles from './TeacherList.module.scss'
 const teachers: TeacherProps[] = [
     {
         avatarUrl: '/images/teacher1.jpg',
-        name: 'Сергей Иванов',
-        position: 'Крутейший препод',
-        experienceYears: 15,
-        comment: 'Люблю объяснять сложные темы простым языком.',
+        name: 'Иванов Сергей',
+        position: 'создатель школы',
     },
     {
         avatarUrl: '/images/teacher2.jpg',
-        name: 'Несергей Иванов',
-        position: 'Просто препод',
-        experienceYears: 2,
-        comment: 'Главное — заинтересовать ученика!',
+        name: 'Лазарев Дмитрий',
+        position: 'инструктор с большим опытом',
     },
     {
         avatarUrl: '/images/teacher3.jpg',
-        name: 'Еще кто-то',
-        position: 'препод',
-        experienceYears: 1,
-        comment: 'Современные технологии — ключ к успеху.',
+        name: 'Константин Зятенков',
+        position: 'младший инструктор',
     },
 ]
 
