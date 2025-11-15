@@ -3,35 +3,40 @@ name: Deploy to SprintHost
 on:
   push:
     branches:
-      - main
+      - main   # ветка для деплоя
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout репозитория
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Устанавливаем Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
+      # 3. Устанавливаем зависимости
       - name: Install dependencies
         working-directory: ./src/apps/web
         run: npm ci
-      
+
+      # 4. Сборка Next.js (статический экспорт)
       - name: Build (Next.js static export)
         working-directory: ./src/apps/web
-        run: npm run export:static
+        run: npm run build
         env:
           NODE_ENV: production
 
-      
-      - name: Show out/ contents (debug)
-        run: ls -la ./src/apps/web/out || echo "out/ not found"
-        
+      # 5. Проверка папки out/ (debug)
+      - name: Show out/ contents
+        run: ls -la ./src/apps/web/out/
+
+      # 6. Деплой на FTP
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -40,5 +45,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./src/apps/web/out/
-          server-dir: ${{ secrets.FTP_DESTINATION }}/
-
+          server-dir: ${{ secrets.FTP_DESTINATION }}/   # обязательно с завершающим слэшем
