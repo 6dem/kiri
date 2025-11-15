@@ -8,7 +8,6 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "export:static": "next build && next export",
     "start:static": "npx serve out"
   },
   "dependencies": {
