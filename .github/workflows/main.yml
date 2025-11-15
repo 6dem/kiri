@@ -19,9 +19,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        working-directory: ./src/apps/web
         run: npm ci
 
       - name: Build (Next.js static export)
+        working-directory: ./src/apps/web
         run: npm run build
         env:
           NODE_ENV: production
@@ -33,5 +35,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./out
+          local-dir: ./src/apps/web/out
           server-dir: ${{ secrets.FTP_DESTINATION }}
