@@ -24,9 +24,10 @@ jobs:
       
       - name: Build (Next.js static export)
         working-directory: ./src/apps/web
-        run: npm run build
+        run: npm run export:static
         env:
           NODE_ENV: production
+
       
       - name: Show out/ contents (debug)
         run: ls -la ./src/apps/web/out || echo "out/ not found"
