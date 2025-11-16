@@ -77,3 +77,8 @@
         background-color: darken($accent-color, 10);
     }
 }
+
+.statusMessage {
+    text-align: center;
+    color: $accent-color;
+}
