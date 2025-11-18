@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: calc(100dvh - $header-height);
+    height: calc(100svh - $header-height);
     scroll-margin-top: calc(20px + $header-height);
     max-height: 1440px;
 }
@@ -33,6 +33,7 @@
     border-radius: 16px;
     padding: 16px;
     max-width: 250px;
+    text-align: center;
     text-wrap: pretty;
     z-index: 1000;
 }

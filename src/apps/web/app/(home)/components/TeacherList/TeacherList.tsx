@@ -17,6 +17,7 @@ const teachers: TeacherProps[] = [
         avatarUrl: '/images/teacher3.jpg',
         name: 'Константин Зятенков',
         position: 'младший инструктор',
+        comment: '«Ошибки в Го не стираются, как и в жизни. Но они могут стать основой для твоей будущей победы»'
     },
 ]
 
