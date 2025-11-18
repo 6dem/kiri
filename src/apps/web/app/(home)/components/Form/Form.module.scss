@@ -57,7 +57,15 @@
 }
 
 .textarea {
+    resize: vertical;
+    min-height: 50px;
+    max-height: 100px;
     width: 100%;
+}
+textarea::-webkit-resizer {
+    width: 10px;
+    height: 10px;
+    color: $accent-color;
 }
 
 .submitButton {
