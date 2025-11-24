@@ -36,6 +36,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/kiri-bot
+            echo "TG_TOKEN=${{ secrets.TG_TOKEN }}" > .env
+            echo "TG_OWNER_CHAT_ID=${{ secrets.TG_OWNER_CHAT_ID }}" >> .env
+            echo "TG_ADMIN_CHAT_ID=${{ secrets.TG_ADMIN_CHAT_ID }}" >> .env
+            echo "TG_DEV_CHAT_ID=${{ secrets.TG_DEV_CHAT_ID }}" >> .env
+            echo "TG_DEBUG_CHAT_ID=${{ secrets.TG_DEBUG_CHAT_ID }}" >> .env
+
             npm install --production
             pm2 restart kiri-bot || pm2 start bot.js --name kiri-bot
             pm2 save
