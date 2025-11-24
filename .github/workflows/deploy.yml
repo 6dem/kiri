@@ -10,15 +10,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: src/apps/bot
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------------- Copy only the bot directory ----------------
+      # ---------------- Upload only bot directory ----------------
       - name: Upload bot files to server
         uses: appleboy/scp-action@v0.1.7
         with:
