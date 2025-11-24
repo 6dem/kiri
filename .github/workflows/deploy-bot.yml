@@ -23,8 +23,9 @@ jobs:
           host: ${{ secrets.VDS_HOST }}
           username: ${{ secrets.VDS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "src/apps/bot/*"
+          source: "*"
           target: "/var/www/kiri-bot"
+          strip_components: 3
 
       # ---------------- SSH commands on server ----------------
       - name: Install deps & restart PM2
