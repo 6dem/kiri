@@ -3,25 +3,33 @@ name: Deploy Bot
 on:
   push:
     branches: ["main"]
+    paths:
+      - "src/apps/bot/**"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: src/apps/bot
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Copy files to server
+      # ---------------- Copy only the bot directory ----------------
+      - name: Upload bot files to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VDS_HOST }}
           username: ${{ secrets.VDS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "."
+          source: "src/apps/bot/*"
           target: "/var/www/kiri-bot"
 
-      - name: Install deps and restart bot
+      # ---------------- SSH commands on server ----------------
+      - name: Install deps & restart PM2
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.VDS_HOST }}
