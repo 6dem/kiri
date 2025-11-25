@@ -5,7 +5,6 @@ export function registerCommand(bot) {
     await formService.startForm(ctx)
   })
 
-  // Обрабатываем только текст и контакт
   bot.on(['text', 'contact'], async (ctx) => {
     await formService.handleInput(ctx)
   })
