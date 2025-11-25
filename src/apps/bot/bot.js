@@ -4,6 +4,7 @@ import { cancelCommand } from "./commands/cancel.js"
 import { debugCommand } from "./commands/debug.js"
 import { groupCommand } from "./commands/group.js"
 import { registerCommand } from './commands/register.js'
+import { rulesCommand } from "./commands/rules.js"
 import { startCommand } from './commands/start.js'
 
 const bot = new Telegraf(process.env.TG_TOKEN)
@@ -13,6 +14,7 @@ startCommand(bot)
 cancelCommand(bot)
 debugCommand(bot)
 groupCommand(bot)
+rulesCommand(bot)
 registerCommand(bot)
 
 // Запуск
