@@ -9,7 +9,18 @@ export function groupCommand(bot) {
       await ctx.reply(`Вот ваша ссылка для вступления в группу: ${inviteLink}`)
     } catch (err) {
       console.error(err)
-      await debugLog(bot, ctx.update, "DEBUG /group")
+
+      await debugLog(
+        bot,
+        {
+          update: ctx.update,
+          error: {
+            message: err.message,
+            stack: err.stack
+          }
+        },
+        "DEBUG /group"
+      )
     }
   })
 }
