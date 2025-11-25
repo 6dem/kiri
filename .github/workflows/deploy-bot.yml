@@ -41,6 +41,7 @@ jobs:
             echo "TG_ADMIN_CHAT_ID=${{ secrets.TG_ADMIN_CHAT_ID }}" >> .env
             echo "TG_DEV_CHAT_ID=${{ secrets.TG_DEV_CHAT_ID }}" >> .env
             echo "TG_DEBUG_CHAT_ID=${{ secrets.TG_DEBUG_CHAT_ID }}" >> .env
+            echo "TG_GROUP_ID=${{ secrets.TG_GROUP_ID }}" >> .env
 
             npm install --production
             pm2 restart kiri-bot || pm2 start bot.js --name kiri-bot

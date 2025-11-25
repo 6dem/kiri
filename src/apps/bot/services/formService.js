@@ -17,6 +17,8 @@ export const formService = {
   },
 
   async handleInput(ctx) {
+    if (ctx.message.text === '/cancel') return
+
     const id = ctx.from.id
     const userForm = storage.get(id)
 

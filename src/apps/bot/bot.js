@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import { Telegraf } from 'telegraf'
+import { cancelCommand } from "./commands/cancel.js"
 import { debugCommand } from "./commands/debug.js"
 import { groupCommand } from "./commands/group.js"
 import { registerCommand } from './commands/register.js'
@@ -9,9 +10,10 @@ const bot = new Telegraf(process.env.TG_TOKEN)
 
 // Регистрируем команды
 startCommand(bot)
-registerCommand(bot)
+cancelCommand(bot)
 debugCommand(bot)
 groupCommand(bot)
+registerCommand(bot)
 
 // Запуск
 bot.launch()

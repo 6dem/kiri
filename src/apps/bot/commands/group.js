@@ -1,8 +1,8 @@
+import { debugLog } from "../utils/debugLog.js"
 
 export function groupCommand(bot) {
   bot.command("group", async (ctx) => {
     try {
-
       const chatId = process.env.TG_GROUP_ID
       const inviteLink = await ctx.telegram.exportChatInviteLink(chatId)
 
