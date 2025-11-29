@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import "./styles/globals.scss"
 
 export const metadata: Metadata = {
-  title: 'Школа Го «КИРИ» — Обучение игре Го в Севастополе',
+  title: 'Школа Го «КИРИ»',
   description:
     'Школа Го «КИРИ» — обучение игре Го с нуля и для продвинутых игроков.',
   keywords: [

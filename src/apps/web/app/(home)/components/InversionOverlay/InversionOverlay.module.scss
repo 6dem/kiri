@@ -9,7 +9,7 @@
     background: linear-gradient(113deg, rgba(255, 255, 255, 1) 50%, transparent 50%);
     mix-blend-mode: difference;
     transform-origin: top center;
-    animation: expandInvert 2s ease forwards;
+    animation: expandInvert 1s ease-out forwards;
 }
 
 @keyframes expandInvert {
