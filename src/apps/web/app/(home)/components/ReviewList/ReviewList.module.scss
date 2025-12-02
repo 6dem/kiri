@@ -36,18 +36,16 @@
     align-self: flex-end;
 }
 
-.brush {
+.topRightIcon {
     position: absolute;
     top: calc(3 * $vertical-offset);
     right: calc(3 * $horizontal-offset);
-    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
 }
 
-.origami {
+.bottomLeftIcon {
     position: absolute;
     bottom: calc(3 * $vertical-offset);
     left: calc(3 * $horizontal-offset);
-    animation: fade-in 1s ease forwards, bowl-float 2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s infinite alternate;
 }
 
 @media (max-width: 768px) {

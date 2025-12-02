@@ -31,10 +31,10 @@ export function TeacherList() {
                   Наши преподаватели
                 </h2>
                 <div className={styles.content}>
-                  <Image className={styles.paperLantern} src="/icons/paper-lantern.svg" alt="paper lantern icon" width={150} height={150} />
                   <div className={styles.bubble}>
                     Наши преподаватели — опытные мастера и настоящие энтузиасты, которые помогут вам полюбить Го и раскрыть свой потенциал в игре.
                   </div>
+                  <Image className={styles.thinGoBoard} src="/icons/thin-go-board.svg" alt="icon" width={300} height={300} />
                 </div>
               </div>
               <div className={styles.cardsScroll}>
