@@ -47,6 +47,7 @@ jobs:
             echo "TG_OWNER_CHAT_ID=${{ secrets.TG_OWNER_CHAT_ID }}" >> .env
 
             echo "API_PORT=${{ secrets.API_PORT }}" >> .env
+            echo "API_ORIGINS=${{ secrets.API_ORIGINS }}" >> .env
 
             npm install --production
 
