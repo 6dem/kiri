@@ -1,0 +1,54 @@
+name: Deploy API
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/apps/api/**"
+      - ".github/workflows/deploy-api.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ---------------- Upload API files ----------------
+      - name: Upload API to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "src/apps/api/*"
+          target: "/var/www/kiri-go-api"
+          strip_components: 3
+
+      # ---------------- SSH: install deps, write env, restart PM2 ----------------
+      - name: Install deps & restart API
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/kiri-go-api
+
+            echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" > .env
+            echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> .env
+            echo "MAIL_SECURE=${{ secrets.MAIL_SECURE }}" >> .env
+
+            echo "SMTP_USER=${{ secrets.SMTP_USER }}" >> .env
+            echo "SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}" >> .env
+
+            echo "TG_TOKEN=${{ secrets.TG_TOKEN }}" >> .env
+            echo "TG_OWNER_CHAT_ID=${{ secrets.TG_OWNER_CHAT_ID }}" >> .env
+
+            echo "API_PORT=${{ secrets.API_PORT }}" >> .env
+
+            npm install --production
+
+            pm2 restart kiri-go-api || pm2 start npm --name kiri-go-api -- start
+            pm2 save

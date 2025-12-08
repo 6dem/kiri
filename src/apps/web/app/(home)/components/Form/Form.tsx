@@ -83,7 +83,7 @@ export function Form({ onClose }: IFormProps) {
         <input type="text" name="patronymic" placeholder="Ваше отчество" className={styles.input} value={form.patronymic} onChange={handleChange} />
       </div>
       <div className={styles.inputWrapper}>
-        <input type="number" name="age" placeholder="Ваш возраст" required className={styles.input} value={form.age} onChange={handleChange} />
+        <input type="number" min={0} max={116} name="age" placeholder="Ваш возраст" required className={styles.input} value={form.age} onChange={handleChange} />
       </div>
       <div className={styles.inputWrapper}>
         <input type="email" name="email" placeholder="Email" required className={styles.input} value={form.email} onChange={handleChange} />
