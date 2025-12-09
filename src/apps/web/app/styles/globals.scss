@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./fonts.scss";
 
 *,
 *::before,
@@ -13,7 +14,7 @@ html {
 }
 
 body {
-    font-family: Cormorant Garamond, sans-serif;
+    font-family: "Manege-Light", Cormorant Garamond, sans-serif;
     background: #fff;
     color: #222;
     min-height: 100vh;
