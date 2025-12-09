@@ -4,24 +4,27 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: min(90vw, 1280px);
+    width: min(95vw, 1280px);
     margin: 0 auto;
     height: $header-height;
     padding-top: 10px;
+    gap: 10px;
 }
 
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: clamp(10px, 2vw, 32px);
     border-bottom: 3px solid $black-color;
     position: relative;
 }
 
 .item {
     position: relative;
+    flex-shrink: 0;
     font-size: 20px;
-    padding: 16px;
+    padding: 16px 0;
     text-decoration: none;
     color: $black-color;
     font-weight: bold;
@@ -54,11 +57,40 @@
     }
 }
 
+.targetLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    max-width: 150px;
+    text-align: center;
+    border-radius: 24px;
+    padding: 8px 12px;
+    color: $white-color;
+    background-color: $black-color;
+    font-weight: 400;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+
+    &:hover {
+        color: $white-color;
+        background-color: lighten($accent-color, 0%);
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+}
+
 @media (max-width: 950px) {
     .item {
         position: relative;
         font-size: 16px;
-        padding: 10px;
+    }
+
+    .menu {
+        gap: 10px;
     }
 }
 

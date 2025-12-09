@@ -39,14 +39,17 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <BurgerButton isOpen={menuOpen} setIsOpen={setMenuOpen} />
       </nav>
-      <MobileMenu
-        open={menuOpen}
-        menuItems={menuItems}
-        active={active}
-        onMenuItemClick={handleMenuItemClick}
-      />
+      <div className={styles.buttonGroup}>
+        <a className={styles.targetLink} href="#contacts">Хочу на занятие</a>
+        <BurgerButton isOpen={menuOpen} setIsOpen={setMenuOpen} />
+      </div>
+        <MobileMenu
+          open={menuOpen}
+          menuItems={menuItems}
+          active={active}
+          onMenuItemClick={handleMenuItemClick}
+        />
     </header>
   );
 }
