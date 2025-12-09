@@ -37,12 +37,16 @@
 }
 
 .topRightIcon {
+    filter: blur(0.5);
+    opacity: 0.8;
     position: absolute;
     top: calc(3 * $vertical-offset);
     right: calc(3 * $horizontal-offset);
 }
 
 .bottomLeftIcon {
+    filter: blur(0.5);
+    opacity: 0.8;
     position: absolute;
     bottom: calc(3 * $vertical-offset);
     left: calc(3 * $horizontal-offset);
