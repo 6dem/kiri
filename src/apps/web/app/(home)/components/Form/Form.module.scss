@@ -8,6 +8,7 @@
     background: $white-color;
     padding: 24px;
     border-radius: 8px;
+    height: min(95vh, 650px);
 }
 
 .formHeader {
@@ -39,6 +40,15 @@
     }
 }
 
+.inputGroup {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .inputWrapper,
 .textareaWrapper {
     position: relative;
@@ -50,6 +60,7 @@
     border: 2px solid darken($white-color, 10);
     border-radius: 4px;
     width: 100%;
+    transition: border-color 0.2s;
 
     &:focus {
         border-color: $accent-color;

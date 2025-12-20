@@ -24,7 +24,7 @@ app.post("/send", async (req, res) => {
   } = req.body
 
   // Проверка обязательных полей
-  if (!name || !surname || !age || !email || !tel || !message) {
+  if (!name || !surname || (!email && !tel)) {
     return res.status(400).json({ error: "Missing required fields" })
   }
 
@@ -43,23 +43,23 @@ app.post("/send", async (req, res) => {
     const adminMessage = `
 📩 Новая запись с сайта
 Имя: ${name} ${surname} ${patronymic || ""}
-Возраст: ${age}
-Email: ${email}
-Телефон: ${tel}
-Знакомство с Го: ${goKnowledge || "не указано"}
-Уровень: ${goLevel || "не указано"}
-Сообщение: ${message}
+${age && "Возраст:"} ${age}
+${email && "Email:"} ${email}
+${tel && "Телефон:"} ${tel}
+Знакомство с Го: ${goKnowledge}
+${goLevel && "Уровень:"} ${goLevel}
+${message && "Сообщение:"} ${message}
 `
     await transporter.sendMail({
-      from: `Школа Го "КИРИ" <${process.env.SMTP_USER}>`,
+      from: `Школа Го «КИРИ» <${process.env.SMTP_USER}>`,
       to: process.env.SMTP_USER,
       subject: "Новая запись с сайта",
       text: adminMessage
     })
 
     // --- Автоответ пользователю ---
-    await transporter.sendMail({
-      from: `Школа Го "КИРИ" <${process.env.SMTP_USER}>`,
+    email && await transporter.sendMail({
+      from: `Школа Го «КИРИ» <${process.env.SMTP_USER}>`,
       to: email,
       subject: "Мы получили вашу заявку",
       text: `Здравствуйте ${name},\n\nСпасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.\n\n— Школа Го "КИРИ"`
