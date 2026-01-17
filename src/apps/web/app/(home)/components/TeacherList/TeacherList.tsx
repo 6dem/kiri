@@ -6,17 +6,17 @@ const teachers: TeacherProps[] = [
     {
         avatarUrl: '/images/teacher1.jpg',
         name: 'Иванов Сергей',
-        position: 'создатель школы',
+        position: 'Основатель школы Го',
     },
     {
         avatarUrl: '/images/teacher2.jpg',
         name: 'Лазарев Дмитрий',
-        position: 'инструктор с большим опытом',
+        position: 'Инструктор с большим опытом',
     },
     {
         avatarUrl: '/images/teacher3.jpg',
         name: 'Зятенков Константин',
-        position: 'младший инструктор',
+        position: 'Младший инструктор',
         comment: '«Ошибки в Го не стираются, как и в жизни. Но они могут стать основой для твоей будущей победы»'
     },
 ]

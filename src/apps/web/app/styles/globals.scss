@@ -10,11 +10,15 @@
 }
 
 html {
+    font-size: 10px;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Manege-Light", Cormorant Garamond, sans-serif;
+    font-family:
+        "Manege-Light",
+        Cormorant Garamond,
+        sans-serif;
     background: #fff;
     color: #222;
     min-height: 100vh;
@@ -28,6 +32,18 @@ h4,
 h5,
 h6 {
     margin: 0;
+}
+
+h2 {
+    font-size: 6rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3rem;
 }
 
 img,
@@ -61,8 +77,8 @@ ol {
 }
 
 section {
-    margin: 20px 0;
-    padding: 20px 0;
+    // margin: 2rem 0;
+    padding: 2rem 0;
 }
 
 .container {
@@ -77,4 +93,10 @@ section {
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 45px;
+    }
 }

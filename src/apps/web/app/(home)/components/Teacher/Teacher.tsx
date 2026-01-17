@@ -23,24 +23,35 @@ export function Teacher({
 
     return (
         <div className={styles.Teacher}>
-            {imgError ? (
-                <div className={styles.avatar}>
-                    <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
-                        <circle cx="48" cy="43" r="24" fill="#E0E0E0"/>
-                        <ellipse cx="48" cy="85" rx="28" ry="16" fill="#E0E0E0"/>
+            <div className={styles.avatar}>
+                {imgError ? (
+                    <svg viewBox="0 0 96 96" fill="none">
+                        <defs>
+                            <clipPath id="half-ellipse">
+                            <rect x="0" y="0" width="100" height="88" />
+                            </clipPath>
+                        </defs>
+                        <circle cx="48" cy="43" r="24" fill="#E0E0E0" />
+                        <ellipse
+                            cx="48"
+                            cy="87"
+                            rx="35"
+                            ry="18"
+                            fill="#E0E0E0"
+                            clipPath="url(#half-ellipse)"
+                        />
                     </svg>
-                </div>
-            ) : (
-                <Image
-                    src={avatarUrl}
-                    alt={name}
-                    className={styles.avatar}
-                    width={96}
-                    height={96}
-                    priority
-                    onError={() => setImgError(true)}
-                />
-            )}
+                    ) : (
+                    <Image
+                        src={avatarUrl}
+                        alt={name}
+                        className={styles.image}
+                        fill
+                        priority
+                        onError={() => setImgError(true)}
+                    />
+                    )}
+            </div>
             <div className={styles.info}>
                 <h3 className={styles.name}>{name}</h3>
                 <p className={styles.position}>{position}</p>
@@ -54,8 +65,8 @@ export function Teacher({
                         : "лет"}
                     </p>
                     )}
-                {comment && <blockquote className={styles.comment}>{comment}</blockquote>}
             </div>
+            {comment && <blockquote className={styles.comment}>{comment}</blockquote>}
         </div>
     )
 }

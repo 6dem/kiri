@@ -11,15 +11,15 @@ export function EducationOffer() {
 
         <div className={styles.formats}>
           <div className={styles.card}>
-            <h3>Индивидуальные занятия</h3>
+            <h4>Индивидуальные занятия</h4>
             <p>Персональный подход для максимального результата.</p>
           </div>
           <div className={styles.card}>
-            <h3>Групповые тренировки</h3>
+            <h4>Групповые тренировки</h4>
             <p>Обучение в дружеской атмосфере и командном духе.</p>
           </div>
           <div className={styles.card}>
-            <h3>Онлайн и офлайн</h3>
+            <h4>Онлайн и офлайн</h4>
             <p>Выбирайте удобный формат и время.</p>
           </div>
         </div>

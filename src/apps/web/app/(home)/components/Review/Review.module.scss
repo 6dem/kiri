@@ -2,6 +2,7 @@
 
 .Review {
     background-color: rgba($black-color, 0.8);
+    backdrop-filter: blur(5);
     border-radius: 24px 4px 24px 4px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 24px 32px;
@@ -17,7 +18,7 @@
 
 .name {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 3rem;
     color: $white-color;
     text-align: left;
     flex: 1;
@@ -25,7 +26,7 @@
 
 .text {
     flex: 2;
-    font-size: 20px;
+    font-size: 2.5rem;
     color: $white-color;
     text-align: right;
     margin-left: 32px;
