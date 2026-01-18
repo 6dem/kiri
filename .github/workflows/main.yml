@@ -35,6 +35,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_API_URL_SEND: ${{ secrets.NEXT_PUBLIC_API_URL_SEND }}
 
       # 5. Проверка папки out/ (debug)
       - name: Show out/ contents
@@ -49,4 +50,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./src/apps/web/out/
-          server-dir: ${{ secrets.FTP_DESTINATION }}/   # обязательно с завершающим слэшем
+          server-dir: ${{ secrets.FTP_DESTINATION }}/
