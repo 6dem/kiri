@@ -10,8 +10,6 @@ type Status = "idle" | "loading" | "success" | "error"
 
 interface FormState {
   name: string
-  surname: string
-  patronymic: string
   age: string
   email: string
   tel: string
@@ -22,8 +20,6 @@ interface FormState {
 
 const initialForm: FormState = {
   name: "",
-  surname: "",
-  patronymic: "",
   age: "",
   email: "",
   tel: "",
@@ -121,12 +117,6 @@ export function Form({ onClose }: IFormProps) {
     }
     setContactError("")
 
-    // --- Проверка знаний Го ---
-    if (!form.goKnowledge) {
-      setGoError("Укажите, знакомы ли вы с игрой Го.")
-      return
-    }
-
     if (form.goKnowledge === "Да" && !form.goLevel) {
       setGoError("Укажите ваш уровень игры в Го.")
       return
@@ -186,31 +176,6 @@ export function Form({ onClose }: IFormProps) {
             required
             className={styles.input}
             value={form.name}
-            onChange={handleChange}
-          />
-        </div>
-
-        {/* Фамилия */}
-        <div className={styles.inputWrapper}>
-          <input
-            type="text"
-            name="surname"
-            placeholder="Ваша фамилия"
-            required
-            className={styles.input}
-            value={form.surname}
-            onChange={handleChange}
-          />
-        </div>
-
-        {/* Отчество */}
-        <div className={styles.inputWrapper}>
-          <input
-            type="text"
-            name="patronymic"
-            placeholder="Ваше отчество"
-            className={styles.input}
-            value={form.patronymic}
             onChange={handleChange}
           />
         </div>

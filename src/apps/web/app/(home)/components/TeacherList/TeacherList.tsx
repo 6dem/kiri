@@ -30,6 +30,15 @@ export function TeacherList() {
                 <h2 className={styles.title}>
                   Наши преподаватели
                 </h2>
+                <div className={styles.imgWrapper}>
+                  <Image
+                    src={"/images/teachers.jpg"}
+                    alt={"Фото преподавателей"}
+                    className={styles.image}
+                    fill
+                    priority
+                  />
+                </div>
                 <div className={styles.content}>
                   <div className={styles.bubble}>
                     Наши преподаватели — опытные мастера и настоящие энтузиасты, которые помогут вам полюбить Го и раскрыть свой потенциал в игре.

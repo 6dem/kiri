@@ -7,7 +7,7 @@ export function AboutGo() {
         <h2 className={styles.title}>Что такое Го?</h2>
         <blockquote className={styles.quote}>«Игра, которая учит мыслить на десятилетия вперед»</blockquote>
         <div className={styles.content}>
-          <Image className={styles.image} src="/images/aboutGo_img.png" alt="Main image" width={450} height={300} />
+          <Image className={styles.image} src="/images/aboutGo.jpg" alt="Main image" width={450} height={300} />
           <div className={styles.text}>
             <p>Го — древнейшая стратегическая настольная игра, возникшая более 2500 лет назад в Китае.</p>
             <p>Главная цель — получить территориальное преимущество.</p>

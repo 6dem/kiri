@@ -3,12 +3,12 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     max-width: 400px;
     background: $white-color;
     padding: 24px;
     border-radius: 8px;
-    height: min(95vh, 650px);
+    height: min(95vh, 600px);
 }
 
 .formHeader {
@@ -66,11 +66,13 @@
 
 .textarea {
     resize: vertical;
-    min-height: 50px;
-    max-height: 100px;
+    min-height: 100px;
+    max-height: 150px;
+    padding-left: 12px;
     width: 100%;
+    margin-top: auto;
 }
-textarea::-webkit-resizer {
+.textarea::-webkit-resizer {
     width: 10px;
     height: 10px;
     color: $accent-color;
@@ -88,6 +90,7 @@ textarea::-webkit-resizer {
     background-color: $accent-color;
     transition: background-color 0.3s;
     border-radius: 4px;
+    margin-top: auto;
 
     &:hover {
         background-color: darken($accent-color, 10);
@@ -97,4 +100,5 @@ textarea::-webkit-resizer {
 .statusMessage {
     text-align: center;
     color: $accent-color;
+    font-size: 1.8rem;
 }

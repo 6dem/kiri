@@ -13,14 +13,14 @@ export function ReviewList() {
   return (
     <section id="reviews" className={styles.ReviewList}>
       <div className="container">
-        <Image className={styles.topRightIcon} src="/icons/top-right-corner.svg" alt="icon" width={300} height={300}/>
+        <Image className={styles.topRightIcon} src="/icons/top-right-corner.svg" alt="icon" width={350} height={350}/>
         <h2 className={styles.stickyTitle}>Что о нас говорят</h2>
         <div className={styles.list}>
           {reviews.slice(0, 3).map((review, idx) => (
             <Review key={idx} {...review} />
           ))}
         </div>
-          <Image className={styles.bottomLeftIcon} src="/icons/bottom-left-corner.svg" alt="icon" width={300} height={300}/>
+          <Image className={styles.bottomLeftIcon} src="/icons/bottom-left-corner.svg" alt="icon" width={350} height={350}/>
       </div>
     </section>
   )
