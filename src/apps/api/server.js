@@ -19,12 +19,12 @@ app.use(express.json())
 // --- POST /send ---
 app.post("/send", async (req, res) => {
   const {
-    name, surname, patronymic, age,
+    name, age,
     email, tel, goKnowledge, goLevel, message
   } = req.body
 
   // Проверка обязательных полей
-  if (!name || !surname || (!email && !tel)) {
+  if (!name || (!email && !tel)) {
     return res.status(400).json({ error: "Missing required fields" })
   }
 
@@ -42,11 +42,11 @@ app.post("/send", async (req, res) => {
     // --- Письмо администратору ---
     const adminMessage = `
 📩 Новая запись с сайта
-Имя: ${name} ${surname} ${patronymic || ""}
+Имя: ${name}
 ${age && "Возраст:"} ${age}
 ${email && "Email:"} ${email}
 ${tel && "Телефон:"} ${tel}
-Знакомство с Го: ${goKnowledge}
+${goKnowledge && "Знакомство с Го:"} ${goKnowledge}
 ${goLevel && "Уровень:"} ${goLevel}
 ${message && "Сообщение:"} ${message}
 `
