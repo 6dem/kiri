@@ -30,6 +30,7 @@
     background-color: $accent-color;
     transition: background-color 0.3s;
     border-radius: 4px;
+    background-image: radial-gradient(circle, #d6af99, #c99d87, #ba8f7a, #ab816e, #9d7462, #8a6758, #785b4e);
 
     &:hover {
         background-color: darken($accent-color, 10);
@@ -91,6 +92,17 @@
     transition: background-color 0.3s;
     border-radius: 4px;
     margin-top: auto;
+    background-image: linear-gradient(
+        to left top,
+        #e4c2ac,
+        #d6af99,
+        #c99d87,
+        #ba8f7a,
+        #ab816e,
+        #9d7462,
+        #8a6758,
+        #785b4e
+    );
 
     &:hover {
         background-color: darken($accent-color, 10);
