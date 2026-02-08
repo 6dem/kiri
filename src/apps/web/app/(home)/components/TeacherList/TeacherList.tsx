@@ -7,11 +7,13 @@ const teachers: TeacherProps[] = [
         avatarUrl: '/images/teacher1.jpg',
         name: 'Иванов Сергей',
         position: 'Основатель школы Го',
+        comment: "«Игра в Го заключается в разрезании»"
     },
     {
         avatarUrl: '/images/teacher2.jpg',
         name: 'Лазарев Дмитрий',
         position: 'Инструктор с большим опытом',
+        comment: "«Семь раз упал, восемь раз встал»"
     },
     {
         avatarUrl: '/images/teacher3.jpg',
