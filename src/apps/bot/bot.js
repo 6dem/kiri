@@ -7,12 +7,10 @@ import { groupCommand } from "./commands/group.js"
 import { registerCommand } from './commands/register.js'
 import { rulesCommand } from "./commands/rules.js"
 import { startCommand } from './commands/start.js'
-import { initCron } from './services/cronService.js'
 
 
 const bot = new Telegraf(process.env.TG_TOKEN)
 
-initCron(bot)
 
 // Регистрируем команды
 startCommand(bot)
